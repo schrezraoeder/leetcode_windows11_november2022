@@ -38,7 +38,7 @@ class Solution(object):
         return self._find_minimum(0, len(array)-1)
     
 # NOTE: this code I wrote after failing miserably to explain my thinking process with Apoorva tonight. 
-# so it is straight from de kopf. Well... Apoorva helped me a bit in spite of being unable to follow 
+# so it is straight from der kopf. Well... Apoorva helped me a bit in spite of being unable to follow 
 # what the heck I was doing **probably** [massively understated] b/c i miserably failed to explain my
 # thinking process. -- ejs 
 

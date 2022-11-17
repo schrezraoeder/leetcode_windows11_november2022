@@ -1,15 +1,18 @@
-# this is the mcoding solution from youtube:
-# https://www.youtube.com/watch?v=P9OSkJOVf6U 
-
-class Solution:
-    def firstMissingPositive(self, nums: List[int]) -> int:
-        appearances = [True] + [False] * 10**5
+class Solution(object):
+    def firstMissingPositive(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        for ix, num in enumerate(nums):
+            if num <= 0 or num > len(nums):
+                nums[ix] = 0 
+        print (nums) 
+        q = [True] + [False]*len(nums) 
         for num in nums:
-            if 0 < num < 10**5+1:
-                appearances[num] = True 
-        for ix, boolean in enumerate(appearances):
-            if not boolean: 
+            q[num] = True 
+        for ix, num in enumerate(q):
+            if not num:
                 return ix
-        return 10**5+1
-            
+        return len(nums) + 1 
         

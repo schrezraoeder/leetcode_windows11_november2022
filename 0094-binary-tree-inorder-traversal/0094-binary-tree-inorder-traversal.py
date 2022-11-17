@@ -10,8 +10,13 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
+        # This solution is basically identical to:
+        # https://leetcode.com/problems/binary-tree-inorder-traversal/discuss/283746/All-DFS-traversals-(preorder-inorder-postorder)-in-Python-in-1-line 
         if root:
             return self.inorderTraversal(root.left) + [root.val] + self.inorderTraversal(root.right)
         else:
             return [] 
+        
+        # my solution was: 
+        
         

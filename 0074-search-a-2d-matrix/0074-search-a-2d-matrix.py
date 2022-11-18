@@ -1,5 +1,9 @@
 class Solution:
     
+    # NOTE to self, I said I would do a binary search on the rows but then just ran through them all
+    # with a for loop, for when I return to this. Just one thing to clean up. But I'm leaving this 
+    # for now cause it took me 9 minutes from reading the problem to coding up a solution without 
+    # consulting any outside resources (not even a python interpreter). 
     # return the row index where target can be found or -1 if it is outside the bounds of the matrix 
     def _which_row_game(self, matrix, target): 
         ix = -1 
@@ -25,9 +29,6 @@ class Solution:
                 return True
             else: 
                 return self._binary_search_row(row[l:median], target) or self._binary_search_row(row[median+1:], target) 
-        
-        
-        
         
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         

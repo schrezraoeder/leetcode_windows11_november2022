@@ -11,12 +11,14 @@ class Solution(object):
         :type q: TreeNode
         :rtype: bool
         """
-        if not p and not q:
-            return True 
-        elif not p and q: 
-            return False 
-        elif not q and p:
-            return False 
+        # if not p and not q:
+        #     return True 
+        # elif not p and q: 
+        #     return False 
+        # elif not q and p:
+        #     return False 
+        if not p or not q:
+            return not p and not q 
         if not p.left and not p.right:
             if not q.left and not q.right:
                 return p.val == q.val 

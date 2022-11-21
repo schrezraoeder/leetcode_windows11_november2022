@@ -17,19 +17,19 @@ class Solution(object):
             return 1 + self.height(node.left) 
         return 1 + max(self.height(node.left), self.height(node.right)) 
     
-    def leftHeight(self, node):
-        if not node:
-            return 0 
-        if not node.left:
-            return 1
-        return 1 + self.height(node.left) 
+#     def leftHeight(self, node):
+#         if not node:
+#             return 0 
+#         if not node.left:
+#             return 1
+#         return 1 + self.height(node.left) 
     
-    def rightHeight(self, node):
-        if not node:
-            return 0 
-        if not node.right:
-            return 1
-        return 1 + self.height(node.right)
+#     def rightHeight(self, node):
+#         if not node:
+#             return 0 
+#         if not node.right:
+#             return 1
+#         return 1 + self.height(node.right)
     
     def isBalanced(self, root):
         """

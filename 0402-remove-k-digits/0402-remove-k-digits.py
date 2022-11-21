@@ -13,7 +13,7 @@ class Solution(object):
             while stack and k > 0 and stack[-1] > char: 
                 stack.pop()
                 k -= 1 
-            if stack or char != '0':
+            if stack or char != '0': # we don't want leading 0's 
                 stack.append(char) 
         stack = ''.join(stack) 
         stack = stack[:len(stack)-k]

@@ -5,5 +5,5 @@ class Solution:
         while k > 1:
             heapq.heappop(maxHeap)
             k -= 1 
-        return str(-maxHeap[0])
+        return -maxHeap[0]
         

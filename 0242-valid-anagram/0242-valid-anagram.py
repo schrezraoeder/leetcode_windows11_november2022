@@ -1,3 +1,5 @@
+from collections import Counter 
+
 class Solution(object):
     def isAnagram(self, s, t):
         """
@@ -20,6 +22,22 @@ class Solution(object):
 #             else:
 #                 freq_t[char] += 1 
 #         return freq_s == freq_t 
-
-        return ''.join(sorted(s)) == ''.join(sorted(t)) 
+        # alternative one-line solution: 
+        # return ''.join(sorted(s)) == ''.join(sorted(t)) 
+        
+        # alternative solution using Counter's: 
+        s = ''.join(s.split()) # replace s with a version of itself lacking spaces 
+        t = ''.join(t.split()) 
+        if len(s) != len(t):
+            return False 
+        q = Counter(s) 
+        w = Counter(t) 
+        for item in q:
+            if q[item] != w[item]:
+                return False 
+        for item in w:
+            if w[item] != q[item]:
+                return False 
+        return True 
+        
         

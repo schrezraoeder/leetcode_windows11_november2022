@@ -1,4 +1,5 @@
 from collections import Counter 
+import numpy as np 
 
 class Solution(object):
     def isAnagram(self, s, t):
@@ -8,20 +9,20 @@ class Solution(object):
         :rtype: bool
         """
         
-        freq_s = {}
-        freq_t = {} 
+#         freq_s = {}
+#         freq_t = {} 
         
-        for char in s:
-            if char not in freq_s: 
-                freq_s[char] = 1
-            else:
-                freq_s[char] += 1
-        for char in t:
-            if char not in freq_t:
-                freq_t[char] = 1
-            else:
-                freq_t[char] += 1 
-        return freq_s == freq_t 
+#         for char in s:
+#             if char not in freq_s: 
+#                 freq_s[char] = 1
+#             else:
+#                 freq_s[char] += 1
+#         for char in t:
+#             if char not in freq_t:
+#                 freq_t[char] = 1
+#             else:
+#                 freq_t[char] += 1 
+#         return freq_s == freq_t 
     
         # alternative one-line solution: 
         # return ''.join(sorted(s)) == ''.join(sorted(t)) 
@@ -40,5 +41,18 @@ class Solution(object):
         #     if w[item] != q[item]:
         #         return False 
         # return True 
+        
+        # alternative solution using count arrays 
+        count = [0]*26 
+        if len(s) != len(t):
+            return False 
+        
+        for char_s, char_t in zip(s, t): 
+            index_s = ord(char_s) - 97 
+            count[index_s] += 1 
+            index_t = ord(char_t) - 97 
+            count[index_t] -= 1 
+        return (all(np.array(count) == 0)) 
+        
         
         

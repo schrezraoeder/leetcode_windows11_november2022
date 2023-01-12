@@ -29,7 +29,7 @@ class Solution:
                 courses_taken += 1 
                 for neighbor in graph[vertex]:
                     in_degree[neighbor] -= 1 
-                    if in_degree[neighbor] == 0: # remember we can take courses w/ no prereq remaining `in_degree` counts extant prereqs 
+                    if in_degree[neighbor] == 0: # remember we can take courses w/ no prereq remaining; `in_degree` counts extant prereqs 
                         queue.append(neighbor) 
         return number_of_semesters if courses_taken == N else -1 
             

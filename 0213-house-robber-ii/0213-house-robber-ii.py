@@ -4,6 +4,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        # NOTE: `house_robber_i` is copy-pasted from my solution 
+        # to "House Robber", to wit:
+        # https://leetcode.com/submissions/detail/892875874/ 
         def house_robber_i(nums):
             dp = [0] * len(nums)
             dp[0] = nums[0]

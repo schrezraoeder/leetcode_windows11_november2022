@@ -16,5 +16,5 @@ class Solution(object):
         dp[2] = max(nums[0] + nums[2], nums[1]) 
         for x in range(3, len(nums)):
             dp[x] = max(dp[x-2] + nums[x], dp[x-1], dp[x-3] + nums[x])  
-        return max(dp[-1], dp[-2])  
+        return dp[-1]  
         

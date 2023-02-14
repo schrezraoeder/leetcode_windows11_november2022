@@ -1,34 +1,18 @@
-# NOTE: after much struggle with this one, watched the Neetcode solution before coding it up 
-class Solution: 
-    
-    
-    
-        
-        
-    def numDecodings(self, s: str) -> int:  
-        
-        def dfs(pos):
-            # if pos >= len(s) - 1:
-            #     dp[pos] = 1 
-            #     return 1 
-            if pos in dp:
-                return dp[pos]
-            if s[pos] == '0':
-                return 0
-            # if pos == len(s) - 1:
-            #     return 1 
+class Solution(object):
+    def numDecodings(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        if s[0] == '0': return 0 
+        dp = {len(s):1} # ? 
+        for j in range(len(s)-1, -1, -1): 
+            if s[j] == '0': 
+                dp[j] = 0 
+            else:
+                dp[j] = dp[j+1] 
+            if (j+1 < len(s)) and ((s[j] == '1') or (s[j] == '2' and s[j+1] in '0123456')):
+                dp[j] += dp[j+2] 
+        return dp[0] 
             
-            res = dfs(pos+1) 
-            if (pos<len(s)-1) and ((s[pos] == '1') or (s[pos] == '2' and s[pos+1] in '0123456')):
-                res += dfs(pos+2) 
-            dp[pos] = res 
-            return res 
-        
-        dp = {len(s): 1} # base case 
-        return dfs(0) 
-        
-            
-        
-                
-        
         

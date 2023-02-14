@@ -1,6 +1,6 @@
 # NOTE: after much struggle with this one, watched the Neetcode solution before coding it up 
 # And I struggled so much with this one that I also watched the Knowledge Center solution[s] 
-# then tried coding it up again 
+# then tried coding it up again https://youtu.be/o1i7JYWbwOE?t=1337 
 class Solution: 
     def numDecodings(self, s: str) -> int:  
         if len(s) == 0: 

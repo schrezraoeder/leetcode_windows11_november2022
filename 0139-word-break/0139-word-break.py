@@ -1,7 +1,7 @@
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         all_words = set(wordDict)
-        #@functools.lru_cache(None)
+        #@functools.lru_cache(None) # c.f. https://walkccc.me/LeetCode/problems/0139/ 
         def word_break_recursive(s, cash):
             if len(s) == 0 or s in all_words:
                 return True 

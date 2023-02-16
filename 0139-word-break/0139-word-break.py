@@ -1,23 +1,23 @@
-class Solution:
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        all_words = set(wordDict)
-        #@functools.lru_cache(None) # c.f. https://walkccc.me/LeetCode/problems/0139/ 
-        def word_break_recursive(s, cash):
-            if len(s) == 0 or s in all_words:
-                return True 
-            #for word in all_words: 
-            for i in range(len(s)):
-                if s[:i] in all_words:
-                    if s[i:] in cash: 
-                        if cash[s[i:]]:
-                            return True
-                    else:
-                        stop = word_break_recursive(s[i:], cash)
-                        cash[s[i:]] = stop 
-                        #print (self._stop)
-                        if stop:
-                            return True 
-            return False    
-        cach_e = {} 
-        return word_break_recursive(s, cach_e)
+# After watching Neetcode solution, again, apparently I went through this one in like August 
+# and I did a non-dp solution yesterday 
+class Solution(object):
+    def wordBreak(self, s, wordDict):
+        """
+        :type s: str
+        :type wordDict: List[str]
+        :rtype: bool
+        """
+        
+        dp = [False] * (len(s) + 1) 
+        dp[len(s)] = True 
+        
+        for i in range(len(s)-1, -1, -1):
+            for word in wordDict: 
+                if i + len(word) <= len(s): 
+                    if s[i:i+len(word)] == word:
+                        dp[i] = dp[i + len(word)] 
+                if dp[i]:
+                    break
+        return dp[0] 
+                    
         

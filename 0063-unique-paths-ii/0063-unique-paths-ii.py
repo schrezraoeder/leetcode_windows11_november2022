@@ -12,22 +12,23 @@ class Solution(object):
         n = len(obstacleGrid[0]) # columns guaranteed at least one column so this won't throw an error
         dp = [[0] * n for _ in range(m)] 
         # bottom row & rightmost column are all always `1`s (unless an obstacle in the way): 
-        _break = False 
+        # _break = False 
         for i in range(m-1, -1, -1):
-            if _break:
-                continue 
+            # if _break:
+            #     continue 
             if not obstacleGrid[i][-1]:
                 dp[i][-1] = 1 
             else: 
-                _break = True 
-        _break = False 
+                break 
+        # _break = False 
         for j in range(n-1, -1, -1):
-            if _break:
-                continue 
+            # if _break:
+            #     continue 
             if not obstacleGrid[-1][j]:
                 dp[-1][j] = 1 
             else: 
-                _break = True 
+                # _break = True 
+                break 
         for i in range(m-2, -1, -1):
             for j in range(n-2, -1, -1):
                 if not obstacleGrid[i][j]:

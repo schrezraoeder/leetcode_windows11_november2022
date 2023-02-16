@@ -17,10 +17,6 @@ class Solution(object):
             if _break:
                 continue 
             if not obstacleGrid[i][-1]:
-                print (m)
-                print (n)
-                print (i)
-                print () 
                 dp[i][-1] = 1 
             else: 
                 _break = True 
@@ -36,7 +32,6 @@ class Solution(object):
             for j in range(n-2, -1, -1):
                 if not obstacleGrid[i][j]:
                     dp[i][j] = dp[i+1][j] + dp[i][j+1]
-        print (dp)
         return dp[0][0] 
         
         

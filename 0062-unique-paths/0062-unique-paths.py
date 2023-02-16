@@ -1,11 +1,22 @@
-from itertools import product 
-class Solution:
-    def uniquePaths(self, m: int, n: int) -> int:
-        dp = [[1 for _ in range(n)] for _ in range(m)] 
-        # the first row and first column will always remain 1 for these types of problems with no obstacles 
-        for i, j in product (range(1, m), range(1, n)): 
-            dp[i][j] = dp[i-1][j] + dp[i][j-1] 
-        return dp[-1][-1]
-            
-            
+class Solution(object):
+    def uniquePaths(self, m, n):
+        """
+        :type m: int
+        :type n: int
+        :rtype: int
+        """
+        dp = [[0] * n for i in range(m)] 
+        dp[-1][-1] = 1 
+        # bottom row and rightmost column is always all `1`s 
+        for j in range(m):
+            dp[j][-1] = 1
+        for i in range(n):
+            dp[-1][i] = 1 
+        for i in range(n-2, -1, -1):
+            for j in range(m-2, -1, -1): 
+                dp[j][i] = dp[j+1][i] + dp[j][i+1] 
+        return dp[0][0] 
+                
+        
+        
         

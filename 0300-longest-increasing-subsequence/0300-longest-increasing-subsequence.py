@@ -1,4 +1,4 @@
-# Note: watched the qualitative part (not the code part) of Neetcode.io's youtube solution earlier the same day as coding it up 
+# Note: watched the qualitative part (not the code part) of Neetcode.io's youtube solution earlier the same day as coding it up (& got it wrong at one submission before getting all test cases to pass)
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
         dp = [1] * (len(nums)) 

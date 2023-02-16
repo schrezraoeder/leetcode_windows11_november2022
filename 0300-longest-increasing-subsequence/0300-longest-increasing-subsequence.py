@@ -1,3 +1,4 @@
+# Note: watched the qualitative part (not the code part) of Neetcode.io's youtube solution earlier the same day as coding it up 
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
         dp = [1] * (len(nums)) 

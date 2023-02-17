@@ -7,9 +7,8 @@ class Solution:
     def isMatch(self, s: str, p: str) -> bool:
         def cleanup(p): 
             cleaned_up_pattern = '' 
-            done = False
             ix = 0 
-            while ix < len(p) and not done: 
+            while ix < len(p): 
                 if p[ix] != '*': 
                     cleaned_up_pattern += p[ix] 
                     ix += 1 

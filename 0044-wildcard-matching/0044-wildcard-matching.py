@@ -36,7 +36,6 @@ class Solution:
             
         dp = {} # memoization hashmap 
         p = cleanup(p) 
-        print (p) 
         return helper(s, p, dp) 
                 
                         

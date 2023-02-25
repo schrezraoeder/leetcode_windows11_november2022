@@ -4,6 +4,9 @@
 #         self.val = x
 #         self.next = None
 
+# coded this one up from my head using common sense in a few minutes 
+# while being interrupted at my day job without referring to any 
+# external sources... maybe it should be marked "easy", not "medium" level difficulty 
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
         seen = set() 

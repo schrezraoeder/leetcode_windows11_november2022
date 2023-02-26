@@ -1,9 +1,7 @@
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
         list_pattern = [item for item in pattern] 
-        print (list_pattern) 
         list_string = s.split()
-        print (list_string)
         if len(list_pattern) != len(list_string):
             return False 
         map_pattern_words = {}

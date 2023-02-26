@@ -1,3 +1,5 @@
+# Note: watched the neetcode solution yesterday after spending some time 
+# on it & realizing O(1) for both pop & push is a *bit* tricky while maintaining a min 
 class MinStack:
 
     def __init__(self):

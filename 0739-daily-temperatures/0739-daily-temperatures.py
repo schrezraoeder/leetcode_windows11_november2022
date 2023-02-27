@@ -1,3 +1,5 @@
+# NOTE: I had to study Greater Element first and also watched the solution video
+# https://youtu.be/ekFs9Nb2RNQ 
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
         stack = [len(temperatures)-1] # monotonic increasing stack

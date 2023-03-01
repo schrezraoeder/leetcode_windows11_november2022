@@ -1,4 +1,4 @@
-# Note: struggled with this one for more than half an hour then watched 
+# Note: struggled with this one for more than half an hour then watched the 
 # Neetcode.io solution before coding it up 
 # https://youtu.be/BJnMZNwUk1M 
 class Solution:

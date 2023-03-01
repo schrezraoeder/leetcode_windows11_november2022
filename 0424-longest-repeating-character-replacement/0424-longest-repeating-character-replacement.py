@@ -1,3 +1,7 @@
+# stared at the problem statement for a few minutes... 
+# then watched the neetcode.io solution up until this time stamp:
+# https://youtu.be/gqXU1UyA8pk?t=590
+# then wrote the following 
 from copy import deepcopy 
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
@@ -14,9 +18,7 @@ class Solution:
             summ = 0 
             for char, count in old_counts.items():
                 summ += count 
-            return summ 
-            
-                
+            return summ     
         best = 0 
         l, r = 0, 0
         counts = {} 

@@ -1,3 +1,5 @@
+# NOTE: I had watched 
+# https://youtu.be/vMj5_vYCXfA 
 class Solution(object):
     def mostCompetitive(self, nums, k):
         """
